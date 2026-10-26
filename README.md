@@ -2,7 +2,18 @@
 
 > GenAI-powered planning assistant for weddings, birthdays, and community events — powered by **Google Gemini 2.0 Flash**
 
-[![CI](https://github.com/asifmohammed1/Celebration-Event-Planner/actions/workflows/ci.yml/badge.svg)](https://github.com/asifmohammed1/Celebration-Event-Planner/actions)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://celebration-event-planner-mu.vercel.app/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/asifmohammed1/Celebration---Event-Planner)
+[![CI](https://github.com/asifmohammed1/Celebration---Event-Planner/actions/workflows/ci.yml/badge.svg)](https://github.com/asifmohammed1/Celebration---Event-Planner/actions)
+
+---
+
+### 🔗 Project Links
+
+* 🌐 **Live Demo:** [https://celebration-event-planner-mu.vercel.app/](https://celebration-event-planner-mu.vercel.app/)
+* 💻 **GitHub Repository:** [https://github.com/asifmohammed1/Celebration---Event-Planner](https://github.com/asifmohammed1/Celebration---Event-Planner)
+
+---
 
 ## Overview
 
@@ -48,7 +59,7 @@ Celebration & Event Planner/
 │   ├── budget.js           → BudgetMgr: CRUD, totals, over-budget detection, render
 │   └── app.js              → Bootstrap, handler map, tab navigation, SW registration
 ├── tests/
-│   └── planner.test.js     → 22 suites, 82+ assertions, zero dependencies
+│   └── planner.test.js     → 22 suites, 109 assertions, zero dependencies
 ├── Dockerfile              → nginx:alpine, port 8080
 ├── nginx.conf              → Security headers, gzip, /healthz
 └── .github/workflows/ci.yml → Lint + HTML validate + Test + Docker
@@ -69,7 +80,7 @@ Open `http://localhost:3000` — all features work with built-in demo responses.
 npm install        # Install dev dependencies
 npm run lint       # ESLint (0 errors, 0 warnings)
 npm run validate   # HTML validate
-npm test           # Run 82 unit tests
+npm test           # Run 109 unit & integration tests
 npm run serve      # Serve locally at :3000
 ```
 
