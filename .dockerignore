@@ -1,0 +1,8 @@
+node_modules
+.git
+.github
+*.md
+tests/
+.eslintrc.json
+jsconfig.json
+package*.json

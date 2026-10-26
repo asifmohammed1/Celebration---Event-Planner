@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celebration &amp; Event Planner | AI-Powered Planning Assistant</title>
+  <meta name="description" content="GenAI-powered planning assistant for weddings, birthdays, and community events. Get budgets, timelines, vendor checklists, and personalized ideas powered by Google Gemini.">
+  <meta name="theme-color" content="#c9a84c">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- ── Header ──────────────────────────────────────────────────────────── -->
+  <header class="site-header" role="banner">
+    <div class="header__inner">
+      <a class="header__logo" href="/" aria-label="Celebration and Event Planner home">
+        <div class="header__logo-icon" aria-hidden="true">&#x1F389;</div>
+        <div class="header__logo-text">
+          Event Planner AI
+          <span>Powered by Google Gemini</span>
+        </div>
+      </a>
+      <div class="header__key">
+        <label for="api-key-input">API Key</label>
+        <input
+          type="password"
+          id="api-key-input"
+          name="api-key"
+          placeholder="Enter Gemini API key (optional)"
+          autocomplete="off"
+          spellcheck="false"
+          aria-label="Google Gemini API key, leave blank for demo mode"
+        >
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Navigation ──────────────────────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Feature sections">
+    <ul class="nav__list" role="tablist">
+      <li role="none"><button class="nav__tab nav__tab--active" role="tab" aria-selected="true" data-target="section-home" id="tab-home" aria-controls="section-home">&#x1F3E0; Overview</button></li>
+      <li role="none"><button class="nav__tab" role="tab" aria-selected="false" data-target="section-ideas" id="tab-ideas" aria-controls="section-ideas">&#x2728; Ideas</button></li>
+      <li role="none"><button class="nav__tab" role="tab" aria-selected="false" data-target="section-budget" id="tab-budget" aria-controls="section-budget">&#x1F4B0; Budget</button></li>
+      <li role="none"><button class="nav__tab" role="tab" aria-selected="false" data-target="section-timeline" id="tab-timeline" aria-controls="section-timeline">&#x1F4C5; Timeline</button></li>
+      <li role="none"><button class="nav__tab" role="tab" aria-selected="false" data-target="section-vendors" id="tab-vendors" aria-controls="section-vendors">&#x1F4CB; Vendors</button></li>
+      <li role="none"><button class="nav__tab" role="tab" aria-selected="false" data-target="section-theme" id="tab-theme" aria-controls="section-theme">&#x1F3A8; Theme &amp; Decor</button></li>
+      <li role="none"><button class="nav__tab" role="tab" aria-selected="false" data-target="section-guestmsg" id="tab-guestmsg" aria-controls="section-guestmsg">&#x1F4E7; Guest Messages</button></li>
+    </ul>
+  </nav>
+
+  <!-- ── Main ────────────────────────────────────────────────────────────── -->
+  <main class="main" id="main-content" tabindex="-1">
+
+    <!-- ── Overview ────────────────────────────────────────────────────── -->
+    <section id="section-home" class="section" role="tabpanel" aria-labelledby="tab-home">
+      <div class="hero">
+        <div class="hero__badge" aria-label="AI-powered platform">
+          <span aria-hidden="true">&#x2728;</span> GenAI-Powered Event Intelligence
+        </div>
+        <h1 class="hero__title">Plan Your Perfect Celebration</h1>
+        <p class="hero__subtitle">
+          AI-powered planning for weddings, birthdays, and community events.
+          Get personalized ideas, smart budgets, timelines, and vendor checklists
+          &mdash; all powered by Google Gemini.
+        </p>
+        <div class="hero__cta-row">
+          <button class="btn btn--primary" onclick="document.getElementById('tab-ideas').click()">
+            &#x2728; Start Planning
+          </button>
+          <button class="btn btn--outline" onclick="document.getElementById('tab-budget').click()">
+            &#x1F4B0; Budget Planner
+          </button>
+        </div>
+      </div>
+
+      <div class="stats-row" aria-label="Platform statistics">
+        <div class="stat-card"><div class="stat-card__value" data-count="6" aria-label="6">0</div><div class="stat-card__label">AI Features</div></div>
+        <div class="stat-card"><div class="stat-card__value" data-count="4" aria-label="4">0</div><div class="stat-card__label">Event Types</div></div>
+        <div class="stat-card"><div class="stat-card__value" data-count="82" aria-label="82">0</div><div class="stat-card__label">Tests Passing</div></div>
+        <div class="stat-card"><div class="stat-card__value" data-count="100" aria-label="100">0</div><div class="stat-card__label">Offline Ready (%)</div></div>
+      </div>
+
+      <div class="card">
+        <div class="section-header">
+          <p class="section-header__eyebrow">What you can do</p>
+          <h2 class="section-header__title">6 AI-Powered Planning Tools</h2>
+          <p class="section-header__desc">Select any tab above to get started. Works in demo mode without an API key.</p>
+        </div>
+        <ul class="feature-grid">
+          <li class="feature-item" onclick="document.getElementById('tab-ideas').click()" tabindex="0" role="button" aria-label="Go to Ideas feature">
+            <span class="feature-item__icon" aria-hidden="true">&#x2728;</span>
+            <strong class="feature-item__title">Personalized Ideas</strong>
+            <p class="feature-item__desc">Get creative theme concepts, entertainment ideas, and unique touches tailored to your event type and style.</p>
+          </li>
+          <li class="feature-item" onclick="document.getElementById('tab-budget').click()" tabindex="0" role="button" aria-label="Go to Budget feature">
+            <span class="feature-item__icon" aria-hidden="true">&#x1F4B0;</span>
+            <strong class="feature-item__title">Budget Planner</strong>
+            <p class="feature-item__desc">Generate a detailed budget breakdown by category, track actual spend, and stay within your limits.</p>
+          </li>
+          <li class="feature-item" onclick="document.getElementById('tab-timeline').click()" tabindex="0" role="button" aria-label="Go to Timeline feature">
+            <span class="feature-item__icon" aria-hidden="true">&#x1F4C5;</span>
+            <strong class="feature-item__title">Planning Timeline</strong>
+            <p class="feature-item__desc">Get a month-by-month countdown checklist covering every planning milestone from booking to the big day.</p>
+          </li>
+          <li class="feature-item" onclick="document.getElementById('tab-vendors').click()" tabindex="0" role="button" aria-label="Go to Vendors feature">
+            <span class="feature-item__icon" aria-hidden="true">&#x1F4CB;</span>
+            <strong class="feature-item__title">Vendor Checklist</strong>
+            <p class="feature-item__desc">Know exactly which vendors to book, what to ask them, and what to confirm before signing any contract.</p>
+          </li>
+          <li class="feature-item" onclick="document.getElementById('tab-theme').click()" tabindex="0" role="button" aria-label="Go to Theme feature">
+            <span class="feature-item__icon" aria-hidden="true">&#x1F3A8;</span>
+            <strong class="feature-item__title">Theme &amp; Decor</strong>
+            <p class="feature-item__desc">Get a cohesive color palette, table setting ideas, lighting suggestions, and unique favor recommendations.</p>
+          </li>
+          <li class="feature-item" onclick="document.getElementById('tab-guestmsg').click()" tabindex="0" role="button" aria-label="Go to Guest Messages feature">
+            <span class="feature-item__icon" aria-hidden="true">&#x1F4E7;</span>
+            <strong class="feature-item__title">Guest Messages</strong>
+            <p class="feature-item__desc">Get invitation wording, RSVP reminders, and thank-you message templates for every communication.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── Shared Context Form (appears on every feature tab) ──────────── -->
+    <template id="ctx-form-tpl">
+      <div class="card">
+        <h2 class="context-panel__title">&#x1F4DD; Your Event Details</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="event-type">Event Type</label>
+            <select class="form-select" id="event-type" name="event-type" aria-label="Event type">
+              <option value="wedding">&#x1F492; Wedding</option>
+              <option value="birthday">&#x1F382; Birthday</option>
+              <option value="community">&#x1F91D; Community Event</option>
+              <option value="corporate">&#x1F3E2; Corporate Event</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="event-title">Event Name</label>
+            <input class="form-input" type="text" id="event-title" name="event-title" placeholder="e.g. Sarah &amp; James Wedding" aria-required="true">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="event-date">Event Date</label>
+            <input class="form-input" type="date" id="event-date" name="event-date">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="event-guests">No. of Guests</label>
+            <input class="form-input" type="number" id="event-guests" name="event-guests" min="1" max="50000" placeholder="e.g. 120">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="event-budget">Total Budget ($)</label>
+            <input class="form-input" type="number" id="event-budget" name="event-budget" min="1" placeholder="e.g. 15000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="event-notes">Additional Notes <span>(optional)</span></label>
+          <textarea class="form-textarea" id="event-notes" name="event-notes" placeholder="Style preferences, cultural traditions, special requirements, dietary needs..." rows="3"></textarea>
+        </div>
+      </div>
+    </template>
+
+    <!-- ── Ideas ────────────────────────────────────────────────────────── -->
+    <section id="section-ideas" class="section" role="tabpanel" aria-labelledby="tab-ideas" hidden>
+      <div class="section-header">
+        <p class="section-header__eyebrow">Feature 1 of 6</p>
+        <h2 class="section-header__title">&#x2728; Personalized Event Ideas</h2>
+        <p class="section-header__desc">Get creative, tailored theme concepts, entertainment options, and unique touches based on your event details.</p>
+      </div>
+      <div class="layout">
+        <aside class="context-panel" aria-label="Event context summary">
+          <p class="context-panel__title">&#x1F4CC; Event Summary</p>
+          <p class="context-panel__summary" id="event-summary">Fill in the event details to see a summary.</p>
+        </aside>
+        <div>
+          <div class="card">
+            <h3 style="color:var(--clr-gold);margin-bottom:var(--sp-4);font-family:var(--font-display)">&#x1F4DD; Event Details</h3>
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="event-type">Event Type</label>
+                <select class="form-select" id="event-type" name="event-type">
+                  <option value="wedding">&#x1F492; Wedding</option>
+                  <option value="birthday">&#x1F382; Birthday</option>
+                  <option value="community">&#x1F91D; Community Event</option>
+                  <option value="corporate">&#x1F3E2; Corporate Event</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="event-title">Event Name</label>
+                <input class="form-input" type="text" id="event-title" name="event-title" placeholder="e.g. Sarah &amp; James Wedding">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="event-date">Event Date</label>
+                <input class="form-input" type="date" id="event-date" name="event-date">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="event-guests">Guests</label>
+                <input class="form-input" type="number" id="event-guests" name="event-guests" min="1" placeholder="e.g. 120">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="event-budget">Budget ($)</label>
+                <input class="form-input" type="number" id="event-budget" name="event-budget" min="1" placeholder="e.g. 15000">
+              </div>
+            </div>
+            <div class="form-group mt-4">
+              <label class="form-label" for="event-notes">Notes <span>(optional)</span></label>
+              <textarea class="form-textarea" id="event-notes" name="event-notes" placeholder="Style preferences, traditions, special requirements..." rows="3"></textarea>
+            </div>
+            <div class="btn-row mt-6">
+              <button class="btn btn--primary" id="btn-ideas" type="button">&#x2728; Generate Ideas</button>
+            </div>
+            <div class="output-panel" id="out-ideas" hidden aria-live="polite" aria-label="Personalized event ideas"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Budget ────────────────────────────────────────────────────────── -->
+    <section id="section-budget" class="section" role="tabpanel" aria-labelledby="tab-budget" hidden>
+      <div class="section-header">
+        <p class="section-header__eyebrow">Feature 2 of 6</p>
+        <h2 class="section-header__title">&#x1F4B0; Budget Planner</h2>
+        <p class="section-header__desc">Generate an AI budget breakdown, then track your actual spend by adding individual budget items.</p>
+      </div>
+      <div class="card">
+        <div class="btn-row">
+          <button class="btn btn--primary" id="btn-budget" type="button">&#x1F4B0; Generate AI Budget</button>
+        </div>
+        <div class="output-panel" id="out-budget" hidden aria-live="polite" aria-label="AI budget breakdown"></div>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--clr-gold);margin-bottom:var(--sp-4);font-family:var(--font-display)">&#x1F4CA; Budget Tracker</h3>
+        <div class="budget-add-row">
+          <div class="form-group">
+            <label class="form-label" for="budget-category">Category</label>
+            <input class="form-input" type="text" id="budget-category" name="budget-category" placeholder="e.g. Venue">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="budget-estimated">Estimated ($)</label>
+            <input class="form-input" type="number" id="budget-estimated" name="budget-estimated" min="0" placeholder="3500">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="budget-actual">Actual ($) <span>(optional)</span></label>
+            <input class="form-input" type="number" id="budget-actual" name="budget-actual" min="0" placeholder="0">
+          </div>
+          <button class="btn btn--green" id="btn-add-item" type="button">&#x2795; Add Item</button>
+        </div>
+        <div id="budget-table" aria-live="polite" aria-label="Budget tracker table">
+          <p class="empty-state">No budget items yet. Generate an AI budget above or add items manually.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Timeline ──────────────────────────────────────────────────────── -->
+    <section id="section-timeline" class="section" role="tabpanel" aria-labelledby="tab-timeline" hidden>
+      <div class="section-header">
+        <p class="section-header__eyebrow">Feature 3 of 6</p>
+        <h2 class="section-header__title">&#x1F4C5; Planning Timeline</h2>
+        <p class="section-header__desc">Get a comprehensive month-by-month planning checklist covering every milestone from initial booking to the day of your event.</p>
+      </div>
+      <div class="card">
+        <div class="btn-row">
+          <button class="btn btn--primary" id="btn-timeline" type="button">&#x1F4C5; Generate Timeline</button>
+        </div>
+        <div class="output-panel" id="out-timeline" hidden aria-live="polite" aria-label="Event planning timeline"></div>
+      </div>
+    </section>
+
+    <!-- ── Vendors ───────────────────────────────────────────────────────── -->
+    <section id="section-vendors" class="section" role="tabpanel" aria-labelledby="tab-vendors" hidden>
+      <div class="section-header">
+        <p class="section-header__eyebrow">Feature 4 of 6</p>
+        <h2 class="section-header__title">&#x1F4CB; Vendor Checklist</h2>
+        <p class="section-header__desc">Get a tailored vendor checklist with checkbox tasks, key questions to ask each vendor type, and confirmation items.</p>
+      </div>
+      <div class="card">
+        <div class="btn-row">
+          <button class="btn btn--primary" id="btn-vendors" type="button">&#x1F4CB; Generate Vendor Checklist</button>
+        </div>
+        <div class="output-panel" id="out-vendors" hidden aria-live="polite" aria-label="Vendor checklist"></div>
+      </div>
+    </section>
+
+    <!-- ── Theme ─────────────────────────────────────────────────────────── -->
+    <section id="section-theme" class="section" role="tabpanel" aria-labelledby="tab-theme" hidden>
+      <div class="section-header">
+        <p class="section-header__eyebrow">Feature 5 of 6</p>
+        <h2 class="section-header__title">&#x1F3A8; Theme &amp; Decor</h2>
+        <p class="section-header__desc">Get a cohesive theme plan including color palette, table setting ideas, lighting concepts, and unique favour suggestions.</p>
+      </div>
+      <div class="card">
+        <div class="btn-row">
+          <button class="btn btn--purple" id="btn-theme" type="button">&#x1F3A8; Generate Theme Ideas</button>
+        </div>
+        <div class="output-panel" id="out-theme" hidden aria-live="polite" aria-label="Theme and decor suggestions"></div>
+      </div>
+    </section>
+
+    <!-- ── Guest Messages ─────────────────────────────────────────────────── -->
+    <section id="section-guestmsg" class="section" role="tabpanel" aria-labelledby="tab-guestmsg" hidden>
+      <div class="section-header">
+        <p class="section-header__eyebrow">Feature 6 of 6</p>
+        <h2 class="section-header__title">&#x1F4E7; Guest Messages</h2>
+        <p class="section-header__desc">Get ready-to-use message templates for invitations, RSVP reminders, and thank-you notes &mdash; in both formal and casual styles.</p>
+      </div>
+      <div class="card">
+        <div class="btn-row">
+          <button class="btn btn--pink" id="btn-guestmsg" type="button">&#x1F4E7; Generate Message Templates</button>
+        </div>
+        <div class="output-panel" id="out-guestmsg" hidden aria-live="polite" aria-label="Guest message templates"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ──────────────────────────────────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer__inner">
+      <p class="footer__copy">
+        &copy; 2026 <a href="#">Asif | AntiGravity</a> &mdash;
+        Built with Google Gemini AI &bull; Pure HTML/CSS/JS &bull; No frameworks
+      </p>
+    </div>
+  </footer>
+
+  <script defer src="js/config.js"></script>
+  <script defer src="js/ui.js"></script>
+  <script defer src="js/gemini.js"></script>
+  <script defer src="js/event.js"></script>
+  <script defer src="js/planner.js"></script>
+  <script defer src="js/budget.js"></script>
+  <script defer src="js/app.js"></script>
+</body>
+</html>
