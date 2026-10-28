@@ -44,13 +44,13 @@
   <!-- ── Navigation ──────────────────────────────────────────────────────── -->
   <nav class="site-nav" aria-label="Feature sections">
     <ul class="nav__list" role="tablist">
-      <li role="none"><button class="nav__tab nav__tab--active" role="tab" aria-selected="true" data-target="section-home" id="tab-home" aria-controls="section-home">&#x1F3E0; Overview</button></li>
-      <li role="none"><button class="nav__tab" role="tab" aria-selected="false" data-target="section-ideas" id="tab-ideas" aria-controls="section-ideas">&#x2728; Ideas</button></li>
-      <li role="none"><button class="nav__tab" role="tab" aria-selected="false" data-target="section-budget" id="tab-budget" aria-controls="section-budget">&#x1F4B0; Budget</button></li>
-      <li role="none"><button class="nav__tab" role="tab" aria-selected="false" data-target="section-timeline" id="tab-timeline" aria-controls="section-timeline">&#x1F4C5; Timeline</button></li>
-      <li role="none"><button class="nav__tab" role="tab" aria-selected="false" data-target="section-vendors" id="tab-vendors" aria-controls="section-vendors">&#x1F4CB; Vendors</button></li>
-      <li role="none"><button class="nav__tab" role="tab" aria-selected="false" data-target="section-theme" id="tab-theme" aria-controls="section-theme">&#x1F3A8; Theme &amp; Decor</button></li>
-      <li role="none"><button class="nav__tab" role="tab" aria-selected="false" data-target="section-guestmsg" id="tab-guestmsg" aria-controls="section-guestmsg">&#x1F4E7; Guest Messages</button></li>
+      <li role="none"><button type="button" class="nav__tab nav__tab--active" role="tab" aria-selected="true" data-target="section-home" id="tab-home" aria-controls="section-home">&#x1F3E0; Overview</button></li>
+      <li role="none"><button type="button" class="nav__tab" role="tab" aria-selected="false" data-target="section-ideas" id="tab-ideas" aria-controls="section-ideas">&#x2728; Ideas</button></li>
+      <li role="none"><button type="button" class="nav__tab" role="tab" aria-selected="false" data-target="section-budget" id="tab-budget" aria-controls="section-budget">&#x1F4B0; Budget</button></li>
+      <li role="none"><button type="button" class="nav__tab" role="tab" aria-selected="false" data-target="section-timeline" id="tab-timeline" aria-controls="section-timeline">&#x1F4C5; Timeline</button></li>
+      <li role="none"><button type="button" class="nav__tab" role="tab" aria-selected="false" data-target="section-vendors" id="tab-vendors" aria-controls="section-vendors">&#x1F4CB; Vendors</button></li>
+      <li role="none"><button type="button" class="nav__tab" role="tab" aria-selected="false" data-target="section-theme" id="tab-theme" aria-controls="section-theme">&#x1F3A8; Theme &amp; Decor</button></li>
+      <li role="none"><button type="button" class="nav__tab" role="tab" aria-selected="false" data-target="section-guestmsg" id="tab-guestmsg" aria-controls="section-guestmsg">&#x1F4E7; Guest Messages</button></li>
     </ul>
   </nav>
 
@@ -70,10 +70,10 @@
           &mdash; all powered by Google Gemini.
         </p>
         <div class="hero__cta-row">
-          <button class="btn btn--primary" onclick="document.getElementById('tab-ideas').click()">
+          <button type="button" class="btn btn--primary" data-tab-switch="tab-ideas">
             &#x2728; Start Planning
           </button>
-          <button class="btn btn--outline" onclick="document.getElementById('tab-budget').click()">
+          <button type="button" class="btn btn--outline" data-tab-switch="tab-budget">
             &#x1F4B0; Budget Planner
           </button>
         </div>
@@ -82,7 +82,7 @@
       <div class="stats-row" aria-label="Platform statistics">
         <div class="stat-card"><div class="stat-card__value" data-count="6" aria-label="6">0</div><div class="stat-card__label">AI Features</div></div>
         <div class="stat-card"><div class="stat-card__value" data-count="4" aria-label="4">0</div><div class="stat-card__label">Event Types</div></div>
-        <div class="stat-card"><div class="stat-card__value" data-count="82" aria-label="82">0</div><div class="stat-card__label">Tests Passing</div></div>
+        <div class="stat-card"><div class="stat-card__value" data-count="109" aria-label="109">0</div><div class="stat-card__label">Tests Passing</div></div>
         <div class="stat-card"><div class="stat-card__value" data-count="100" aria-label="100">0</div><div class="stat-card__label">Offline Ready (%)</div></div>
       </div>
 
@@ -93,32 +93,32 @@
           <p class="section-header__desc">Select any tab above to get started. Works in demo mode without an API key.</p>
         </div>
         <ul class="feature-grid">
-          <li class="feature-item" onclick="document.getElementById('tab-ideas').click()" tabindex="0" role="button" aria-label="Go to Ideas feature">
+          <li class="feature-item" data-tab-switch="tab-ideas" tabindex="0" role="button" aria-label="Go to Ideas feature">
             <span class="feature-item__icon" aria-hidden="true">&#x2728;</span>
             <strong class="feature-item__title">Personalized Ideas</strong>
             <p class="feature-item__desc">Get creative theme concepts, entertainment ideas, and unique touches tailored to your event type and style.</p>
           </li>
-          <li class="feature-item" onclick="document.getElementById('tab-budget').click()" tabindex="0" role="button" aria-label="Go to Budget feature">
+          <li class="feature-item" data-tab-switch="tab-budget" tabindex="0" role="button" aria-label="Go to Budget feature">
             <span class="feature-item__icon" aria-hidden="true">&#x1F4B0;</span>
             <strong class="feature-item__title">Budget Planner</strong>
             <p class="feature-item__desc">Generate a detailed budget breakdown by category, track actual spend, and stay within your limits.</p>
           </li>
-          <li class="feature-item" onclick="document.getElementById('tab-timeline').click()" tabindex="0" role="button" aria-label="Go to Timeline feature">
+          <li class="feature-item" data-tab-switch="tab-timeline" tabindex="0" role="button" aria-label="Go to Timeline feature">
             <span class="feature-item__icon" aria-hidden="true">&#x1F4C5;</span>
             <strong class="feature-item__title">Planning Timeline</strong>
             <p class="feature-item__desc">Get a month-by-month countdown checklist covering every planning milestone from booking to the big day.</p>
           </li>
-          <li class="feature-item" onclick="document.getElementById('tab-vendors').click()" tabindex="0" role="button" aria-label="Go to Vendors feature">
+          <li class="feature-item" data-tab-switch="tab-vendors" tabindex="0" role="button" aria-label="Go to Vendors feature">
             <span class="feature-item__icon" aria-hidden="true">&#x1F4CB;</span>
             <strong class="feature-item__title">Vendor Checklist</strong>
             <p class="feature-item__desc">Know exactly which vendors to book, what to ask them, and what to confirm before signing any contract.</p>
           </li>
-          <li class="feature-item" onclick="document.getElementById('tab-theme').click()" tabindex="0" role="button" aria-label="Go to Theme feature">
+          <li class="feature-item" data-tab-switch="tab-theme" tabindex="0" role="button" aria-label="Go to Theme feature">
             <span class="feature-item__icon" aria-hidden="true">&#x1F3A8;</span>
             <strong class="feature-item__title">Theme &amp; Decor</strong>
             <p class="feature-item__desc">Get a cohesive color palette, table setting ideas, lighting suggestions, and unique favor recommendations.</p>
           </li>
-          <li class="feature-item" onclick="document.getElementById('tab-guestmsg').click()" tabindex="0" role="button" aria-label="Go to Guest Messages feature">
+          <li class="feature-item" data-tab-switch="tab-guestmsg" tabindex="0" role="button" aria-label="Go to Guest Messages feature">
             <span class="feature-item__icon" aria-hidden="true">&#x1F4E7;</span>
             <strong class="feature-item__title">Guest Messages</strong>
             <p class="feature-item__desc">Get invitation wording, RSVP reminders, and thank-you message templates for every communication.</p>
@@ -126,44 +126,6 @@
         </ul>
       </div>
     </section>
-
-    <!-- ── Shared Context Form (appears on every feature tab) ──────────── -->
-    <template id="ctx-form-tpl">
-      <div class="card">
-        <h2 class="context-panel__title">&#x1F4DD; Your Event Details</h2>
-        <div class="form-grid">
-          <div class="form-group">
-            <label class="form-label" for="event-type">Event Type</label>
-            <select class="form-select" id="event-type" name="event-type" aria-label="Event type">
-              <option value="wedding">&#x1F492; Wedding</option>
-              <option value="birthday">&#x1F382; Birthday</option>
-              <option value="community">&#x1F91D; Community Event</option>
-              <option value="corporate">&#x1F3E2; Corporate Event</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="event-title">Event Name</label>
-            <input class="form-input" type="text" id="event-title" name="event-title" placeholder="e.g. Sarah &amp; James Wedding" aria-required="true">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="event-date">Event Date</label>
-            <input class="form-input" type="date" id="event-date" name="event-date">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="event-guests">No. of Guests</label>
-            <input class="form-input" type="number" id="event-guests" name="event-guests" min="1" max="50000" placeholder="e.g. 120">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="event-budget">Total Budget ($)</label>
-            <input class="form-input" type="number" id="event-budget" name="event-budget" min="1" placeholder="e.g. 15000">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="event-notes">Additional Notes <span>(optional)</span></label>
-          <textarea class="form-textarea" id="event-notes" name="event-notes" placeholder="Style preferences, cultural traditions, special requirements, dietary needs..." rows="3"></textarea>
-        </div>
-      </div>
-    </template>
 
     <!-- ── Ideas ────────────────────────────────────────────────────────── -->
     <section id="section-ideas" class="section" role="tabpanel" aria-labelledby="tab-ideas" hidden>
@@ -179,11 +141,11 @@
         </aside>
         <div>
           <div class="card">
-            <h3 style="color:var(--clr-gold);margin-bottom:var(--sp-4);font-family:var(--font-display)">&#x1F4DD; Event Details</h3>
+            <h3 class="card__subtitle">&#x1F4DD; Event Details</h3>
             <div class="form-grid">
               <div class="form-group">
                 <label class="form-label" for="event-type">Event Type</label>
-                <select class="form-select" id="event-type" name="event-type">
+                <select class="form-select" id="event-type" name="event-type" aria-label="Event type">
                   <option value="wedding">&#x1F492; Wedding</option>
                   <option value="birthday">&#x1F382; Birthday</option>
                   <option value="community">&#x1F91D; Community Event</option>
@@ -192,7 +154,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label" for="event-title">Event Name</label>
-                <input class="form-input" type="text" id="event-title" name="event-title" placeholder="e.g. Sarah &amp; James Wedding">
+                <input class="form-input" type="text" id="event-title" name="event-title" placeholder="e.g. Sarah &amp; James Wedding" aria-required="true">
               </div>
               <div class="form-group">
                 <label class="form-label" for="event-date">Event Date</label>
@@ -200,7 +162,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label" for="event-guests">Guests</label>
-                <input class="form-input" type="number" id="event-guests" name="event-guests" min="1" placeholder="e.g. 120">
+                <input class="form-input" type="number" id="event-guests" name="event-guests" min="1" max="50000" placeholder="e.g. 120">
               </div>
               <div class="form-group">
                 <label class="form-label" for="event-budget">Budget ($)</label>
@@ -234,7 +196,7 @@
         <div class="output-panel" id="out-budget" hidden aria-live="polite" aria-label="AI budget breakdown"></div>
       </div>
       <div class="card">
-        <h3 style="color:var(--clr-gold);margin-bottom:var(--sp-4);font-family:var(--font-display)">&#x1F4CA; Budget Tracker</h3>
+        <h3 class="card__subtitle">&#x1F4CA; Budget Tracker</h3>
         <div class="budget-add-row">
           <div class="form-group">
             <label class="form-label" for="budget-category">Category</label>

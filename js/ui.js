@@ -54,7 +54,8 @@ const UIHelpers = (() => {
 
   /**
    * Converts a subset of markdown to safe HTML and injects it into a container.
-   * Only converts bold, headings, list items, table rows, and links.
+   * Converts bold, italic, code, headings, list items, table rows, blockquotes,
+   * horizontal rules, and [text](url) links.
    * @param {HTMLElement|null} container
    * @param {string} raw
    * @returns {void}
@@ -99,7 +100,8 @@ const UIHelpers = (() => {
       const inline = esc(t)
         .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
         .replace(/\*(.+?)\*/g, '<em>$1</em>')
-        .replace(/`(.+?)`/g, '<code>$1</code>');
+        .replace(/`(.+?)`/g, '<code>$1</code>')
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
       html += `<p>${inline}</p>`;
     }
     if (inTable) { html += '</tbody></table>'; }

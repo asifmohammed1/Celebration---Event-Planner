@@ -141,7 +141,11 @@ function activateTab(targetId) {
 
 /* ── Handler Binding Map ────────────────────────────────────────────────────── */
 
-/** @type {Array<{id: string, event: string, fn: Function}>} */
+/**
+ * Maps element IDs to their event listeners.
+ * Declared after all handler functions are hoisted to make intent clear.
+ * @type {Array<{id: string, event: string, fn: Function}>}
+ */
 const HANDLER_MAP = [
   { id: 'btn-ideas',    event: 'click', fn: () => runAiFeature('btn-ideas',    'out-ideas',    Planner.ideasPrompt(),        'Ideas generated!') },
   { id: 'btn-budget',   event: 'click', fn: () => runAiFeature('btn-budget',   'out-budget',   Planner.budgetPrompt(),       'Budget breakdown generated!') },
@@ -164,6 +168,21 @@ function init() {
   // Tab navigation
   document.querySelectorAll('.nav__tab').forEach((tab) => {
     tab.addEventListener('click', () => activateTab(tab.dataset.target));
+  });
+
+  // Action buttons and list items switching tabs
+  document.querySelectorAll('[data-tab-switch]').forEach((el) => {
+    const trigger = () => {
+      const targetTab = document.getElementById(el.dataset.tabSwitch);
+      if (targetTab) { targetTab.click(); }
+    };
+    el.addEventListener('click', trigger);
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        trigger();
+      }
+    });
   });
 
   // Bind all feature handlers

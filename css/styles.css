@@ -1,3 +1,6 @@
+/* ── Google Fonts ───────────────────────────────────────────────────────────── */
+/* @import must appear before all other rules per CSS specification */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
 
 /* ── Design Tokens ─────────────────────────────────────────────────────────── */
 :root {
@@ -51,8 +54,6 @@ body {
     radial-gradient(ellipse 80% 50% at 50% -20%, rgba(201,168,76,0.08) 0%, transparent 60%),
     radial-gradient(ellipse 60% 40% at 80% 80%, rgba(155,89,182,0.06) 0%, transparent 50%);
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
 
 /* ── Skip Link ──────────────────────────────────────────────────────────────── */
 .skip-link {
@@ -344,6 +345,13 @@ body {
 .budget-row--over td { color: var(--clr-red); }
 .budget-add-row { display: flex; gap: var(--sp-3); align-items: flex-end; flex-wrap: wrap; margin-bottom: var(--sp-4); }
 .budget-add-row .form-group { flex: 1; min-width: 140px; }
+
+/* ── Card Subtitle ─────────────────────────────────────────────────────────── */
+.card__subtitle {
+  color: var(--clr-gold);
+  margin-bottom: var(--sp-4);
+  font-family: var(--font-display);
+}
 
 /* ── Empty State ────────────────────────────────────────────────────────────── */
 .empty-state { color: var(--clr-text-muted); text-align: center; padding: var(--sp-8); font-size: 0.9rem; }

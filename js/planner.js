@@ -8,6 +8,7 @@
 
 /** @namespace Planner */
 const Planner = (() => {
+  /** @type {string} Base system instruction shared by all prompt builder functions. */
   const BASE = 'You are a professional event planner and creative consultant. You help users plan beautiful, memorable celebrations. Always be encouraging, practical, and specific. Provide organized, actionable suggestions.';
 
   /**

@@ -118,9 +118,6 @@ const GeminiClient = (() => {
     if (lower.includes('message') || lower.includes('wording') || lower.includes('guest')) {
       return DEMO.guestmsg;
     }
-    if (lower.includes('ideas') || lower.includes('personaliz')) {
-      return DEMO.ideas;
-  }
     return DEMO.ideas;
   }
 
